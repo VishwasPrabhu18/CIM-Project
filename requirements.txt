@@ -1,6 +1,6 @@
 streamlit
 azureml-core
-pickle==0.7.5
+pickle
 nltk
-re==2.2.1
+re
 joblib
