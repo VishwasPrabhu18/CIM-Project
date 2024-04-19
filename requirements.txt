@@ -1,0 +1,6 @@
+streamlit
+azureml-core
+pickle
+nltk
+re
+joblib
