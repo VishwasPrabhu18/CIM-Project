@@ -9,11 +9,6 @@ import joblib
 
 # nltk.download('wordnet')
 
-ws = Workspace.from_config()
-# model2 = Model(ws, "test-model1")
-model_path = Model.get_model_path("azureml://locations/centralindia/workspaces/25fa9527-518b-4d4d-b87a-71320f5df619/models/test-model1/versions/1")
-model2 = joblib.load(model_path)
-
 def sentiment_emoji(sentiment):
     if sentiment == 'positive':
         return "😊"
@@ -110,7 +105,7 @@ def predict(vectoriser, model, text):
 
 def main():
     
-    vectorizer, model1 = load_models()
+    vectorizer, model = load_models()
     
     st.title("Model Deployment with Streamlit")
 
@@ -118,7 +113,7 @@ def main():
 
     # Predict function
     if st.button("Predict"):
-        prediction = predict(vectorizer, model1, [feature1])
+        prediction = predict(vectorizer, model, [feature1])
         
         sentiment = prediction.lower()
         
